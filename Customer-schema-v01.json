@@ -1,0 +1,57 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://haav.dk/schemas/customer-schema.json",
+    "title": "Kunde",
+    "description": "Kunde-entitet til HaaV's kundeadministrationssystem",
+    "type": "object",
+    "properties": {
+      "Id": {
+        "description": "Den unikke identifikator for kunden",
+        "type": "string",
+        "format": "uuid"
+      },
+      "Name": {
+        "description": "Kundens navn",
+        "type": "string"
+      },
+      "Address1": {
+        "description": "Kundens adresse (linje 1)",
+        "type": "string"
+      },
+      "City": {
+        "description": "Kundens by",
+        "type": "string"
+      },
+      "PostalCode": {
+        "description": "Kundens postnummer",
+        "type": "integer"
+      },
+      "ContactName": {
+        "description": "Navn på kundens kontaktperson",
+        "type": "string"
+      },
+      "TaxNumber": {
+        "description": "Kundens skatteidentifikationsnummer",
+        "type": "string",
+        "pattern": "^[0-9]{9}$"
+      },
+      "orders": {
+        "description": "En liste over ordrer tilknyttet kunden",
+        "type": "array",
+        "items": {
+          "$ref": "https://haav.dk/schemas/order-schema.json"
+        }
+      }
+    },
+    "required": [
+      "Id",
+      "Name",
+      "Address1",
+      "City",
+      "PostalCode",
+      "ContactName",
+      "TaxNumber"
+    ],
+    "additionalProperties": false
+  }
+  
