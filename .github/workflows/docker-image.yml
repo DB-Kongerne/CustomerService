@@ -35,7 +35,7 @@ jobs:
           proj-path: CustomerService.csproj
 
       - name: Build the Docker image
-        run: docker build . -f CustomerService/Dockerfile -t ${DOCKER_USER}/${IMAGE_NAME}:${{steps.get-version.outputs.informational-version}}
+        run: docker build . -f Dockerfile -t ${DOCKER_USER}/${IMAGE_NAME}:${{steps.get-version.outputs.informational-version}}
 
       - name: Push Docker image to Docker Hub
         run: docker push ${DOCKER_USER}/${IMAGE_NAME}:${{steps.get-version.outputs.informational-version}}
