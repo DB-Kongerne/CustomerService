@@ -32,7 +32,7 @@ jobs:
         uses: kzrnm/get-net-sdk-project-versions-action@v2
         id: get-version
         with:
-          proj-path: Users/Mel/4sem/HaaVSoftware/CustomerService/CustomerService.csproj
+          proj-path: CustomerService/CustomerService.csproj
 
       - name: Build the Docker image
         run: docker build . -f CustomerService/Dockerfile -t ${DOCKER_USER}/${IMAGE_NAME}:${{steps.get-version.outputs.informational-version}}
