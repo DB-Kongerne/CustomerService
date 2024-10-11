@@ -9,7 +9,7 @@ namespace CustomerService.Controllers;
 [Route("[controller]")]
 public class CustomerController : ControllerBase
 {
-    // Listen med kunder
+    // Listen med kunder er god
     private static List<Customer> _customers = new List<Customer>()
     {
         new Customer()
